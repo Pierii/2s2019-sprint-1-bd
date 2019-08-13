@@ -23,7 +23,7 @@ CREATE TABLE Lancamentos (
 );
 
 CREATE TABLE Permissoes (
-	IdPermissao		TINYINT PRIMARY KEY IDENTITY NOT NULL DEFAULT (1)
+	IdPermissao		TINYINT PRIMARY KEY IDENTITY NOT NULL
 	,Permissao		VARCHAR (255)
 );
 
@@ -33,7 +33,11 @@ CREATE TABLE Usuarios (
 	,Email			VARCHAR (255) UNIQUE NOT NULL
 	,Senha			VARCHAR (255) NOT NULL
 	,CPF			BIGINT	UNIQUE NOT NULL
-	,IdPermisssao	TINYINT	FOREIGN KEY REFERENCES Permissoes (IdPermissao)
+	,IdPermissao	TINYINT	FOREIGN KEY REFERENCES Permissoes (IdPermissao)
 	,DataEntrada	DATETIME NOT NULL DEFAULT GETDATE()
 );
 
+CREATE TABLE Favoritos (
+	IdUsuario		INT FOREIGN KEY REFERENCES Usuarios (IdUsuario)
+	,IdLancamento	INT FOREIGN KEY REFERENCES Lancamentos (IdLancamento)
+);

@@ -20,9 +20,24 @@ INSERT INTO Permissoes (Permissao)
 	VALUES	('Administrador')
 			,('Usuário');
 
-INSERT INTO Usuarios (Nome, Email, Senha, CPF, IdPermisssao)
-	VALUES ('Cassiana', 'cassiana@email.com', '123456', 99817927059, 1)
+INSERT INTO Usuarios (Nome, Email, Senha, CPF, IdPermissao)
+	VALUES	('Erik', 'erik@email.com', '123456', 75144332013, 1)
+			,('Cassiana', 'cassiana@email.com', '123456', 99817927059, 1)
 			,('Helena', 'helena@emai.com', '123456', 93536159095, 2)
 			,('Roberto', 'rob@emai.com', '3110', 96418381050, 2); 
 
+INSERT INTO Favoritos (IdUsuario, IdLancamento)
+	VALUES	(1,3)
+			,(2,2)
+			,(3,1)
+			,(3,2)
+			,(3,3)
+			,(4,2)
+			,(4,3);
 
+INSERT INTO Categorias (Categoria)
+	VALUES	('Drama')
+			,('Documentário')
+			,('Ficção Científica');
+
+INSERT INTO Lancamentos
